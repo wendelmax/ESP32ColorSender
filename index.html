@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESP32 Color Sender</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="title-bar">
+        <div class="title-drag">ESP32 Color Sender</div>
+        <div class="window-controls">
+            <button id="win-info" title="Sobre">&#9432;</button>
+            <button id="win-minimize" title="Minimizar">&#8211;</button>
+            <button id="win-close" title="Fechar">&times;</button>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content glass-card">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="about-info">
+                <div class="avatar-placeholder">JW</div>
+                <h2>Jackson Wendel</h2>
+                <p>Desenvolvedor apaixonado por IoT e soluções criativas.</p>
+                <div class="social-links">
+                    <button class="social-btn" data-url="https://github.com/wendelmax">GitHub</button>
+                    <button class="social-btn"
+                        data-url="https://www.linkedin.com/in/jacksonwendelsantossa">LinkedIn</button>
+                </div>
+                <div class="version-tag">v1.2.0 - Electron</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="glass-card">
+            <h1>ESP32 Color</h1>
+
+            <div class="input-group">
+                <label for="ip-address">ESP32 IP Address</label>
+                <input type="text" id="ip-address" placeholder="192.168.4.1" value="192.168.4.1" />
+            </div>
+
+            <div class="color-picker-container">
+                <input type="color" id="color-picker" value="#ff0000" />
+                <div class="color-preview" id="color-preview"></div>
+            </div>
+
+            <div class="rgb-labels">
+                <span id="label-r">R: 255</span>
+                <span id="label-g">G: 0</span>
+                <span id="label-b">B: 0</span>
+            </div>
+
+            <div class="button-group">
+                <button id="btn-send" class="btn-primary">Enviar ESP32</button>
+                <button id="btn-reset" class="btn-secondary">Zerar</button>
+            </div>
+
+            <div id="status-message" class="status-message"></div>
+
+            <div class="console-wrapper">
+                <div class="console-header">
+                    <span>Debug Log</span>
+                    <button id="btn-clear-logs">Limpar</button>
+                </div>
+                <div id="console-logs" class="console-logs"></div>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
