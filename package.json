@@ -4,13 +4,39 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder",
+    "release": "electron-builder --publish always"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jackson Wendel",
+  "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
-    "electron": "^40.4.1"
+    "electron": "^40.4.1",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.wendelmax.esp32colorsender",
+    "productName": "ESP32 Color Sender",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    }
   }
 }
